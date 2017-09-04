@@ -1,9 +1,8 @@
 {
-  "name": "element-demo-box",
+  "name": "docsify-demo-box-react",
   "version": "1.0.0",
-  "description": "element-ui demo box, write demo in document and preview in jsfiddle",
+  "description": "write React jsx demo in docsify with instant preview and jsfiddle integration",
   "author": "njleonzhang <scream3616@sina.com>",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
