@@ -30,7 +30,7 @@ This plugin is for React. For Vue, please use [docsify-demo-box](https://github.
   }
 ```
 
-parameter of `DemoBoxPlugin.create`:
+parameter of `create`:
 * jsResources: javascript script will be added in `jsfiddle` html filed
 * cssResources: css link will be added in `jsfiddle` css filed
 * bootCode: javascript code you want to add before sample code in `jsfiddle` javascript filed, which is usually used to boot your library.
@@ -108,7 +108,7 @@ Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of
 
 ## Advanced options, AKA comments
 
-### Don't embed the global `bootcode`
+### Don't embed the global bootcode
 
 In this sample, you may have found that `globalVariable` is defined in `index.html`.
 
@@ -118,7 +118,7 @@ In this sample, you may have found that `globalVariable` is defined in `index.ht
 ```
 
 Now if you want to change the value of `globalVariable`, you need to change both values for preview and `jsfiddle`.
-It's easy for preview just override the define, but for `jsfiddle` you need this comments `/*no-boot-code*/`.
+It's easy for preview, just override the define. but for `jsfiddle`, you need this comments `/*no-boot-code*/`.
 
 ```
 /*react*/
@@ -153,7 +153,7 @@ Hello world
 ```
 
 ### special js link
-In this smaple, default js resource is defined as `react` and `react-dom` in `index.html`
+In this sample, default js resource is defined as `react` and `react-dom` in `index.html`
 
 ```
 // for preview
