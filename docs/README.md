@@ -102,6 +102,10 @@ Hello world
 </script>
 ```
 
+The sample code is rendered on the page instantly, so the people who read your document can see the preview immediately.
+If he/she expands the demo box, the source code and description are shown there.
+Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of this sample.
+
 ## Advanced options, AKA comments
 
 ### Don't embed the global `bootcode`
