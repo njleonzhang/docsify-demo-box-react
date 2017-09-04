@@ -6,6 +6,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" >
+  <link rel="stylesheet" href="/style.css" >
 </head>
 <body>
   <div id="app"></div>
@@ -18,8 +19,9 @@
 <script>
   var jsResources = '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react.js"></scr' + 'ipt>\n' +
     '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react-dom.js"></scr' + 'ipt>'
-  var cssResources = '@import url("//unpkg.com/element-ui/lib/theme-default/index.css");'
-  var bootCode = 'var authorName = "leon"'
+  var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+  var bootCode = 'var globalVariable = "leon"'
+  var globalVariable = "leon"
 
   window.$docsify = {
     name: 'docsify-demo-box-react',

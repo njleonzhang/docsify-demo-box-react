@@ -17,7 +17,7 @@ export let create = function(jsResources, cssResources, bootCode) {
             id++
             let Component = generateComponent(code, lang, jsResources, cssResources, bootCode)
             renderComponent(Component, id)
-            return '<div id="' + id + '"/></div/>'
+            return '<div id="' + id + '" class="demo-box demo-box-react"/></div/>'
           } else {
             lang = lang || ''
             let hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)

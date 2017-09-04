@@ -1,6 +1,6 @@
 # [docsify-demo-box-react](https://github.com/njleonzhang/docsify-demo-box-react/)
 
-> a plugin for [docsify](https://docsify.js.org/#/) to write React jsx demo with instant preview and jsfiddle integration
+> A plugin for [docsify](https://docsify.js.org/#/) to write React jsx demo with instant preview and jsfiddle integration
 
 This plugin is for React. For Vue, please use [docsify-demo-box](https://github.com/njleonzhang/docsify-demo-box)
 
@@ -15,11 +15,19 @@ This plugin is for React. For Vue, please use [docsify-demo-box](https://github.
 
 2. Use this plugin as docsify plugin
 ```js
-   window.$docsify = {
-     plugins: [
-       DemoBoxPlugin.create(jsResources, cssResources, bootCode)
-     ]
-   }
+  var jsResources = '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react.js"></scr' + 'ipt>\n' +
+    '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react-dom.js"></scr' + 'ipt>'
+  var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+  var bootCode = 'var globalVariable = "leon"'
+  var globalVariable = "leon"
+
+  window.$docsify = {
+    name: 'docsify-demo-box-react',
+    repo: 'https://github.com/njleonzhang/docsify-demo-box-react',
+    plugins: [
+      DemoBoxReact.create(jsResources, cssResources, bootCode)
+    ]
+  }
 ```
 
 parameter of `DemoBoxPlugin.create`:
@@ -36,7 +44,7 @@ write the following code with tag `/*react*/`:
 
 ```
 <desc>
-hello, this is a `sample`
+Hello world
 </desc>
 <script>
   export default class Application extends React.Component {
@@ -45,21 +53,21 @@ hello, this is a `sample`
       this.state = {
         color: 'blue'
       }
+      this.globalVariable = globalVariable
     }
     render() {
       return (
         <div>
           <div className='wrapper' ref={el => this.el = el}>
             <div>
-            <button style={{color: this.state.color}} className='test' onClick={e => {alert('test'); this.setState({color: 'red'})}}>test</button>
+            <p>author: {this.globalVariable}</p>
+            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
             </div>
           </div>
         </div>
       )
     }
   }
-</script>
-
 ```
 
 it will render as:
@@ -67,7 +75,7 @@ it will render as:
 ```jsx
 /*react*/
 <desc>
-hello, this is a `sample`
+Hello world
 </desc>
 <script>
   export default class Application extends React.Component {
@@ -76,13 +84,15 @@ hello, this is a `sample`
       this.state = {
         color: 'blue'
       }
+      this.globalVariable = globalVariable
     }
     render() {
       return (
         <div>
           <div className='wrapper' ref={el => this.el = el}>
             <div>
-            <button style={{color: this.state.color}} className='test' onClick={e => {alert('test'); this.setState({color: 'red'})}}>test</button>
+            <p>author: {this.globalVariable}</p>
+            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
             </div>
           </div>
         </div>
@@ -92,25 +102,105 @@ hello, this is a `sample`
 </script>
 ```
 
-# Advanced options, AKA comments
+## Advanced options, AKA comments
 
-## don't embed the global bootcode
-If you do not want the global bootcode configed by DemoBoxPlugin.create for some samples, add comment:
+### Don't embed the global `bootcode`
+
+In this sample, you may have found that `globalVariable` is defined in `index.html`.
 
 ```
+  var bootCode = 'var globalVariable = "leon"' // bootCode is for jsfiddle
+  var globalVariable = "leon"   // this define is rendering for preview
+```
+
+Now if you want to change the value of `globalVariable`, you need to change both values for preview and `jsfiddle`.
+It's easy for preview just override the define, but for `jsfiddle` you need this comments `/*no-boot-code*/`.
+
+```
+/*react*/
 /*no-boot-code*/
+<desc>
+Hello world
+</desc>
+<script>
+  let globalVariable = 'leon zhang'
+  export default class Application extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        color: 'blue'
+      }
+      this.globalVariable = globalVariable
+    }
+    render() {
+      return (
+        <div>
+          <div className='wrapper' ref={el => this.el = el}>
+            <div>
+            <p>author: {this.globalVariable}</p>
+            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+</script>
 ```
-* [Vue version sample code](https://github.com/njleonzhang/vue-data-tables/blob/master/docs/searchBoxFilter.md#customize-filter-logic)
-* [Vue version sample](https://njleonzhang.github.io/vue-data-tables/#/searchBoxFilter?id=customize-filter-logic)
+
+### special js link
+In this smaple, default js resource is defined as `react` and `react-dom` in `index.html`
+
+```
+// for preview
+<script src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
+<script src="https://cdn.bootcss.com/react/15.6.1/react-dom.js"></script>
+
+// for jsfiddle
+var jsResources = '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react.js"></scr' + 'ipt>\n' +
+    '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react-dom.js"></scr' + 'ipt>'
+```
 
 
-## special js link
-If you want to add special jsResource for some samples, use jsResource comments
+If you want to add special js resource for some samples, you need add `script` link in `index.html` for preview.
+At same time, use `jsResource` comment to add script for `jsfiffle`
 
 ```
 /*jsResource jslink1 jslink2 ...*/
 ```
 
-* [Vue version sample code](https://github.com/njleonzhang/vue-data-tables/blob/master/docs/event.md#filtered-data)
-* [Vue version sample](https://njleonzhang.github.io/vue-data-tables/#/event?id=filtered-data)
+```
+/*react*/
+/*jsResource https://unpkg.com/vue */
+<desc>
+Hello world
+</desc>
+<script>
+  export default class Application extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        color: 'blue'
+      }
+      this.globalVariable = globalVariable
+    }
+    render() {
+      return (
+        <div>
+          <div className='wrapper' ref={el => this.el = el}>
+            <div>
+            <p>author: {this.globalVariable}</p>
+            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+</script>
+```
 
+Try in `jsfiddle`, you will find the following script is added to `jsfiddle` html area.
+```
+<script src="https://unpkg.com/vue"></script>
+```
