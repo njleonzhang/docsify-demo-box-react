@@ -9,6 +9,7 @@ let cssResources = '@import url("//unpkg.com/element-ui/lib/theme-default/index.
 let bootCode = ''
 
 let code = `
+  <desc>hello word</desc>
   <script>
     export default class Application extends React.Component {
       render() {

@@ -4,7 +4,7 @@ import '../assets/demoBlock.scss'
 import striptags from '../util/strip-tags'
 import PropTypes from 'prop-types'
 import Prism from 'prismjs'
-import 'prismjs/components/prism-jsx.js';
+import 'prismjs/components/prism-jsx.js'
 
 export default class DemoBlock extends Component {
   static defaultProps = {
@@ -57,7 +57,7 @@ export default class DemoBlock extends Component {
         Math.max(this.codeArea.getElementsByClassName('description')[0].clientHeight,
           this.codeArea.getElementsByClassName('highlight')[0].clientHeight)
     } else {
-      this.codeAreaHeight = this.codeArea.getElementsByClassName('highlight')[0].clientHeight;
+      this.codeAreaHeight = this.codeArea.getElementsByClassName('highlight')[0].clientHeight
     }
   }
 
@@ -110,23 +110,23 @@ export default class DemoBlock extends Component {
       panel_css: 1
     };
     const form = document.getElementById('fiddle-form') || document.createElement('form');
-    form.innerHTML = '';
-    const node = document.createElement('textarea');
+    form.innerHTML = ''
+    const node = document.createElement('textarea')
 
-    form.method = 'post';
-    form.action = 'https://jsfiddle.net/api/post/library/pure/';
-    form.target = '_blank';
+    form.method = 'post'
+    form.action = 'https://jsfiddle.net/api/post/library/pure/'
+    form.target = '_blank'
 
     for (let name in data) {
-      node.name = name;
-      node.value = data[name].toString();
-      form.appendChild(node.cloneNode());
+      node.name = name
+      node.value = data[name].toString()
+      form.appendChild(node.cloneNode())
     }
-    form.setAttribute('id', 'fiddle-form');
-    form.style.display = 'none';
-    document.body.appendChild(form);
+    form.setAttribute('id', 'fiddle-form')
+    form.style.display = 'none'
+    document.body.appendChild(form)
 
-    form.submit();
+    form.submit()
   }
 
   render() {
