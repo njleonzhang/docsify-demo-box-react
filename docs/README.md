@@ -2,7 +2,7 @@
 
 > A plugin for [docsify](https://docsify.js.org/#/) to write React jsx demo with instant preview and jsfiddle integration
 
-This plugin is for React. For Vue, please use [docsify-demo-box](https://github.com/njleonzhang/docsify-demo-box)
+This plugin is for React. For Vue, please use [docsify-demo-box-vue](https://njleonzhang.github.io/docsify-demo-box-vue)
 
 ## Usage
 
