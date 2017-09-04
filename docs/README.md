@@ -106,6 +106,8 @@ The sample code is rendered on the page instantly, so the people who read your d
 If he/she expands the demo box, the source code and description are shown there.
 Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of this sample.
 
+> notice: You must write the component as a class and export it as default, like `export default class Application extends React.Component`, because this plugin use the key word `export default class` to parse the code.
+
 ## Advanced options, AKA comments
 
 ### Don't embed the global bootcode
