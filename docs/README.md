@@ -7,7 +7,7 @@ This plugin is for React. For Vue, please use [docsify-demo-box-vue](https://njl
 ## Usage
 
 1. import react and this plugin to docsify `index.html`
-```
+```html
 <script src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
 <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.js"></script>
 <script src="https://unpkg.com/docsify-demo-box-react@{version}/dist/docsify-demo-box-react.min.js"></script>
@@ -42,7 +42,7 @@ This doc is a sample, check the source [md](https://njleonzhang.github.io/docsif
 
 write the following code with tag `/*react*/`:
 
-```
+```jsx
 <desc>
 Hello world
 </desc>
@@ -114,7 +114,7 @@ Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of
 
 In this sample, you may have found that `globalVariable` is defined in `index.html`.
 
-```
+```js
   var bootCode = 'var globalVariable = "leon"' // bootCode is for jsfiddle
   var globalVariable = "leon"   // this define is rendering for preview
 ```
@@ -122,7 +122,7 @@ In this sample, you may have found that `globalVariable` is defined in `index.ht
 Now if you want to change the value of `globalVariable`, you need to change both values for preview and `jsfiddle`.
 It's easy for preview, just override the define. but for `jsfiddle`, you need this comments `/*no-boot-code*/`.
 
-```
+```jsx
 /*react*/
 /*no-boot-code*/
 <desc>
@@ -175,7 +175,7 @@ At same time, use `jsResource` comment to add script for `jsfiffle`
 /*jsResource jslink1 jslink2 ...*/
 ```
 
-```
+```jsx
 /*react*/
 /*jsResource https://unpkg.com/vue */
 <desc>
