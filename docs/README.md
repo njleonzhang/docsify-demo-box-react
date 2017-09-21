@@ -44,7 +44,9 @@ write the following code with tag `/*react*/`:
 
 ```jsx
 <desc>
-Hello world
+Hello `world`
+* a
+* b
 </desc>
 <script>
   export default class Application extends React.Component {
@@ -75,7 +77,9 @@ it will render as:
 ```jsx
 /*react*/
 <desc>
-Hello world
+Hello `world`
+* a
+* b
 </desc>
 <script>
   export default class Application extends React.Component {
@@ -90,10 +94,11 @@ Hello world
       return (
         <div>
           <div className='wrapper' ref={el => this.el = el}>
-            <div>
-            <p>author: {this.globalVariable}</p>
-            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
-            </div>
+            <label className="test-label">
+                <input />
+                <p className="test">author: {this.globalVariable}</p>
+                <button style={{color: this.state.color}} className='test-button' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
+            </label>
           </div>
         </div>
       )
@@ -107,6 +112,8 @@ If he/she expands the demo box, the source code and description are shown there.
 Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of this sample.
 
 > notice: You must write the component as a class and export it as default, like `export default class Application extends React.Component`, because this plugin use the key word `export default class` to parse the code.
+
+> `desc` tag can be used to add description for the sample. `Markdown` syntax is supported
 
 ## Advanced options, AKA comments
 
