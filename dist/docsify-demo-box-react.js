@@ -9376,18 +9376,68 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components___ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 
 
-function renderComponent(Component, id) {
-  setTimeout(function () {
-    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(Component(), document.getElementById(id + ''));
-  });
-}
 
 var create = function create(jsResources, cssResources, bootCode) {
   return function (hook, vm) {
     var id = 0;
+
+    var Components = function () {
+      function Components() {
+        _classCallCheck(this, Components);
+
+        this.componentCache = {};
+      }
+
+      _createClass(Components, [{
+        key: 'cache',
+        value: function cache(Component, id) {
+          var href = window.location.href;
+          var componentObj = {
+            id: id,
+            Component: Component
+          };
+
+          if (this.componentCache[href]) {
+            this.componentCache[href].push(componentObj);
+          } else {
+            this.componentCache[href] = [componentObj];
+          }
+        }
+      }, {
+        key: 'renderFromCache',
+        value: function renderFromCache() {
+          var href = window.location.href;
+          var componentObjs = this.componentCache[href];
+          if (componentObjs) {
+            componentObjs.forEach(function (componentObj) {
+              __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(componentObj.Component(), document.getElementById(componentObj.id + ''));
+            });
+          }
+        }
+      }]);
+
+      return Components;
+    }();
+
+    var components = new Components();
+
+    function renderComponent(Component, id) {
+      components.cache(Component, id);
+
+      setTimeout(function () {
+        __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(Component(), document.getElementById(id + ''));
+      });
+    }
+
+    // for debug
+    window.__components = components;
+
     window.$docsify.markdown = {
       renderer: {
         code: function code(_code, lang) {
@@ -9404,6 +9454,13 @@ var create = function create(jsResources, cssResources, bootCode) {
         }
       }
     };
+
+    hook.mounted(function () {
+      // Called after initial completion. Only trigger once, no arguments.
+      vm.router.onchange(function (_) {
+        components.renderFromCache();
+      });
+    });
   };
 };
 
