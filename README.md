@@ -10,3 +10,11 @@ Click the button `Try in Jsfiddle`, `jsfiddle.net` will be open with the code of
 [Doc](https://njleonzhang.github.io/docsify-demo-box-react/)
 
 This plugin is for React. For Vue, please use [docsify-demo-box-vue](https://njleonzhang.github.io/docsify-demo-box-vue)
+
+## Showcase
+
+These projects are using `docsify-demo-box-react`. Pull requests welcome :blush:
+
+| Project | Description |
+|---|---|
+| [soui-react](https://github.com/sodalife/soui-react/) | Soda UI Components for React |
