@@ -12,3 +12,4 @@ yarn-error.log*
 *.sln
 
 docs/docsify-demo-box-react.js
+dist/

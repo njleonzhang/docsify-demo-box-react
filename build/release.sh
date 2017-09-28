@@ -12,12 +12,6 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "Releasing $VERSION ..."
 
-  # stash
-  git stash
-
-  # lint
-  npm run lint
-
   # build
   VERSION=$VERSION npm run build
 
@@ -31,6 +25,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   git push origin refs/tags/v$VERSION
   git push
 
-  # stash pop
-  git stash pop
+  # publish
+  npm publish
 fi
