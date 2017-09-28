@@ -24,7 +24,4 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   # push
   git push origin refs/tags/v$VERSION
   git push
-
-  # publish
-  # npm publish
 fi
