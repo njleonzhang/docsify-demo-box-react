@@ -14,7 +14,8 @@ export default class DemoBlock extends Component {
     lang: '',
     jsResources: '',
     cssResources: '',
-    bootCode: ''
+    bootCode: '',
+    scrollParentSelector: '.section'
   }
 
   static propsTypes = {
@@ -24,7 +25,8 @@ export default class DemoBlock extends Component {
     lang: PropTypes.string,
     jsResources: PropTypes.string,
     cssResources: PropTypes.string,
-    bootCode: PropTypes.string
+    bootCode: PropTypes.string,
+    scrollParentSelector: PropTypes.string
   }
 
   constructor(props) {
@@ -33,7 +35,9 @@ export default class DemoBlock extends Component {
     this.state = {
       hovering: false,
       controlText: 'Expand',
-      codeAreaHeight: 0
+      codeAreaHeight: 0,
+      fixedControl: false,
+      demoControlStyle: {}
     }
 
     this.isExpanded = false
@@ -81,21 +85,56 @@ export default class DemoBlock extends Component {
         codeAreaHeight: `${this.codeAreaHeight}px`,
         controlText: 'Hide'
       })
+
+      setTimeout(() => {
+        this.scrollParent = document.querySelector(this.props.scrollParentSelector) || window;
+        this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler);
+        this.scrollHandler();
+      }, 200)
     } else {
       this.setState({
         codeAreaHeight: 0,
-        controlText: 'Expand'
+        controlText: 'Expand',
+        fixedControl: false
+      })
+
+      this.removeScrollHandler()
+      const { top, bottom, left, right } = this.codeArea.getBoundingClientRect()
+
+      this.setState({
+        demoControlStyle: {
+          left: '0',
+          width: 'auto'
+        }
       })
     }
+  }
 
+  scrollHandler = () => {
+    const { top, bottom, left, right } = this.codeArea.getBoundingClientRect()
+    this.setState({
+      fixedControl: bottom > document.documentElement.clientHeight && top + 36
+        <= document.documentElement.clientHeight
+    })
+
+    this.setState({
+      demoControlStyle: {
+        left: this.state.fixedControl ? `${ left }px` : '0',
+        width: this.state.fixedControl ? `${ right - left }px` : 'auto'
+      }
+    })
+  }
+
+  removeScrollHandler = () => {
+    this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
   }
 
   goJsfiddle = _ => {
     const { script, html, style } = this.props.jsfiddle;
     let ComponentName = script.match(/export default class (.*) extends/)[1]
 
-    let jsTpl = this.props.bootCode + '\n' + (script || '').replace(/export default/, '').trim();
-    let htmlTpl = `${this.props.jsResources || ''}\n<div id="app">\n${html.trim()}\n</div>`;
+    let jsTpl = this.props.bootCode + '\n' + (script || '').replace(/export default/, '').trim()
+    let htmlTpl = `${this.props.jsResources || ''}\n<div id="app">\n${html.trim()}\n</div>`
     let cssTpl = `${this.props.cssResources || ''}\n${(style || '').trim()}\n`;
 
     if (jsTpl) {
@@ -109,7 +148,7 @@ export default class DemoBlock extends Component {
       panel_js: 3,
       panel_css: 1
     };
-    const form = document.getElementById('fiddle-form') || document.createElement('form');
+    const form = document.getElementById('fiddle-form') || document.createElement('form')
     form.innerHTML = ''
     const node = document.createElement('textarea')
 
@@ -130,9 +169,14 @@ export default class DemoBlock extends Component {
   }
 
   render() {
-    var hoverClass = classNames({
+    let hoverClass = classNames({
       'demo-block': true,
       'hover': this.state.hovering
+    })
+
+    let demoControlClass = classNames({
+      'demo-block-control': true,
+      'is-fixed': this.state.fixedControl
     })
 
     return (
@@ -150,7 +194,10 @@ export default class DemoBlock extends Component {
           </div>
           <div className="highlight" dangerouslySetInnerHTML={ {__html: this.state.codePrismed} } />
         </div>
-        <div className="demo-block-control" onClick={this.toggleDetail}>
+        <div className={ demoControlClass }
+          style={ this.state.demoControlStyle }
+          ref={ control => this.control = control}
+          onClick={this.toggleDetail}>
           <div className="arrow-slide" />
           <div className="text-slide">
             <span>{ this.state.controlText }</span>
@@ -158,5 +205,9 @@ export default class DemoBlock extends Component {
         </div>
       </div>
     )
+  }
+
+  componentWillUnmount() {
+    this.removeScrollHandler()
   }
 }

@@ -3,7 +3,7 @@ import striptags from '../util/strip-tags'
 import DemoBlock from './demo-block'
 import marked from 'marked'
 
-export let generateComponent = function(code, lang, jsResources, cssResources, bootCode) {
+export let generateComponent = function(code, lang, jsResources, cssResources, bootCode, scrollParentSelector) {
   let html = striptags.fetch(code, 'template')
   let style = striptags.fetch(code, 'style')
   let script = striptags.fetch(code, 'script')
@@ -46,7 +46,8 @@ export let generateComponent = function(code, lang, jsResources, cssResources, b
         jsResources={ allJsResources }
         cssResources={ cssResources }
         bootCode={ bootCode }
-        noBootCode={ noBootCode }>
+        noBootCode={ noBootCode }
+        scrollParentSelector={ scrollParentSelector }>
         <MyCodeComponent></MyCodeComponent>
       </DemoBlock>
     )

@@ -110,6 +110,12 @@
     transition: .2s;
     position: relative;
 
+    &.is-fixed {
+      position: fixed;
+      bottom: 0;
+      width: 868px;
+    }
+
     i {
       font-size: 12px;
       line-height: 36px;

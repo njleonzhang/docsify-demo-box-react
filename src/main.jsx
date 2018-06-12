@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {generateComponent} from './components'
+import './assets/dev.scss'
 
 let jsResources = '<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react.js"></scr' + 'ipt>' +
   '\n<scr' + 'ipt src="//cdn.bootcss.com/react/15.6.1/react-dom.js"></scr' + 'ipt>'
