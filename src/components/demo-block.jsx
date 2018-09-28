@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import '../assets/demoBlock.scss'
 import striptags from '../util/strip-tags'
+import createStyle from '../util/createStyle'
 import PropTypes from 'prop-types'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-jsx.js'
@@ -42,17 +43,28 @@ export default class DemoBlock extends Component {
 
     this.isExpanded = false
 
-    let hl = Prism.highlight(
+    const { style } = props.jsfiddle;
+    createStyle(style);
+
+    const hljx = Prism.highlight(
       striptags.fetch(
         this.props.code,
         'script'
       ).replace(/\/\*.*\*\/\s*/g, ''),
       Prism.languages[this.props.lang] || Prism.languages.markup)
 
-    this.state.codePrismed =
+    const hlcss = Prism.highlight(
+      style,
+      Prism.languages.css || Prism.languages.markup)
+
+    this.state.codePrismed = hlcss ? `<pre data-lang="css">
+      <code class="lang-css">${hlcss}</code>
+    </pre>` : '';
+
+    this.state.codePrismed +=
       `<pre data-lang="${this.props.lang}">
-        <code class="lang-${this.props.lang}">${hl}</code>
-      </pre>`
+        <code class="lang-${this.props.lang}">${hljx}</code>
+      </pre>`;
   }
 
   componentDidMount() {
