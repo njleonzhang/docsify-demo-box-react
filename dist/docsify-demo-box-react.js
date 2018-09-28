@@ -189,7 +189,7 @@ module.exports = reactProdInvariant;
 
 
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -581,33 +581,6 @@ module.exports = ExecutionEnvironment;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/**
- * Copyright (c) 2016-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-
-
-// Trust the developer to only use ReactInstrumentation with a __DEV__ check
-
-var debugTool = null;
-
-if (false) {
-  var ReactDebugTool = require('./ReactDebugTool');
-  debugTool = ReactDebugTool;
-}
-
-module.exports = { debugTool: debugTool };
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 /**
@@ -644,6 +617,33 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2016-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+
+
+// Trust the developer to only use ReactInstrumentation with a __DEV__ check
+
+var debugTool = null;
+
+if (false) {
+  var ReactDebugTool = require('./ReactDebugTool');
+  debugTool = ReactDebugTool;
+}
+
+module.exports = { debugTool: debugTool };
 
 /***/ }),
 /* 8 */
@@ -918,7 +918,7 @@ var _assign = __webpack_require__(3);
 
 var PooledClass = __webpack_require__(11);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var warning = __webpack_require__(2);
 
 var didWarnForAddedNewProperty = false;
@@ -1548,7 +1548,7 @@ module.exports = DOMProperty;
 
 
 var ReactRef = __webpack_require__(104);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 
 var warning = __webpack_require__(2);
 
@@ -4481,7 +4481,7 @@ module.exports = getEventModifierState;
 var DOMLazyTree = __webpack_require__(14);
 var Danger = __webpack_require__(110);
 var ReactDOMComponentTree = __webpack_require__(4);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 
 var createMicrosoftUnsafeLocalFunction = __webpack_require__(36);
 var setInnerHTML = __webpack_require__(24);
@@ -5135,7 +5135,7 @@ var _prodInvariant = __webpack_require__(1);
 
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactInstanceMap = __webpack_require__(21);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var ReactUpdates = __webpack_require__(8);
 
 var invariant = __webpack_require__(0);
@@ -5370,7 +5370,7 @@ module.exports = ReactUpdateQueue;
 
 var _assign = __webpack_require__(3);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var warning = __webpack_require__(2);
 
 var validateDOMNesting = emptyFunction;
@@ -6626,7 +6626,7 @@ module.exports = CSSProperty;
 
 var DOMProperty = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(4);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 
 var quoteAttributeValueForBrowser = __webpack_require__(124);
 var warning = __webpack_require__(2);
@@ -8418,7 +8418,7 @@ module.exports = ReactComponentTreeHook;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -8677,7 +8677,7 @@ var ReactDOMContainerInfo = __webpack_require__(179);
 var ReactDOMFeatureFlags = __webpack_require__(180);
 var ReactFeatureFlags = __webpack_require__(54);
 var ReactInstanceMap = __webpack_require__(21);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var ReactMarkupChecksum = __webpack_require__(181);
 var ReactReconciler = __webpack_require__(13);
 var ReactUpdateQueue = __webpack_require__(42);
@@ -9788,8 +9788,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js??ref--6-1!../../node_modules/_postcss-loader@2.1.6@postcss-loader/lib/index.js??ref--6-2!../../node_modules/_sass-loader@6.0.7@sass-loader/lib/loader.js??ref--6-3!./demoBlock.scss", function() {
-			var newContent = require("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js??ref--6-1!../../node_modules/_postcss-loader@2.1.6@postcss-loader/lib/index.js??ref--6-2!../../node_modules/_sass-loader@6.0.7@sass-loader/lib/loader.js??ref--6-3!./demoBlock.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js??ref--6-1!../../node_modules/postcss-loader/lib/index.js??ref--6-2!../../node_modules/sass-loader/lib/loader.js??ref--6-3!./demoBlock.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js??ref--6-1!../../node_modules/postcss-loader/lib/index.js??ref--6-2!../../node_modules/sass-loader/lib/loader.js??ref--6-3!./demoBlock.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -9807,7 +9807,7 @@ exports = module.exports = __webpack_require__(86)(true);
 
 
 // module
-exports.push([module.i, ".demo-block{border:1px solid #eaeefb;border-radius:4px;-webkit-transition:.2s;transition:.2s}.demo-block.hover{-webkit-box-shadow:0 0 8px 0 rgba(232,237,250,.6),0 2px 4px 0 rgba(232,237,250,.5);box-shadow:0 0 8px 0 rgba(232,237,250,.6),0 2px 4px 0 rgba(232,237,250,.5)}.demo-block code{font-family:Menlo,Monaco,Consolas,Courier,monospace}.demo-block .demo-button{float:right}.demo-block .source{padding:24px}.demo-block .meta{background-color:#f9fafc;border-top:1px solid #eaeefb;clear:both;overflow:hidden;height:0;-webkit-transition:height .2s;transition:height .2s}.demo-block .description{padding:18px 24px;width:40%;-webkit-box-sizing:border-box;box-sizing:border-box;border-left:1px solid #eaeefb;float:right;font-size:14px;line-height:1.8;color:#5e6d82;word-break:break-word}.demo-block .description p{margin:0 0 12px;line-height:1.8}.demo-block .description code{color:#5e6d82;background-color:#e6effb;margin:0 4px;display:inline-block;padding:1px 5px;font-size:12px;border-radius:3px;height:18px;line-height:18px}.demo-block .description button{height:36px;line-height:36px;text-align:center;background:#20a0ff;border:none;outline:none;border-radius:5px;color:#fff;display:block;font-size:14px;padding-left:10px;padding-right:10px}.demo-block .description button:hover{background:#4db3ff}.demo-block .highlight{width:60%;border-right:1px solid #eaeefb}.demo-block .highlight pre{margin:0}.demo-block .highlight code.hljs{margin:0;border:none;max-height:none;border-radius:0}.demo-block .highlight code.hljs:before{content:none}.demo-block .highlight .lang-css{padding-bottom:0}.demo-block .demo-block-control{border-top:1px solid #eaeefb;height:36px;-webkit-box-sizing:border-box;box-sizing:border-box;background-color:#fff;border-bottom-left-radius:4px;border-bottom-right-radius:4px;text-align:center;margin-top:-1px;color:#d3dce6;cursor:pointer;-webkit-transition:.2s;transition:.2s;position:relative}.demo-block .demo-block-control.is-fixed{position:fixed;bottom:0;width:868px}.demo-block .demo-block-control i{font-size:12px;line-height:36px;-webkit-transition:.3s;transition:.3s}.demo-block .demo-block-control i.hovering{-webkit-transform:translateX(-40px);transform:translateX(-40px)}.demo-block .demo-block-control span{position:absolute;-webkit-transform:translateX(-30px);transform:translateX(-30px);font-size:14px;line-height:36px;-webkit-transition:.3s;transition:.3s;display:inline-block;color:#58b7ff}.demo-block .demo-block-control span:hover{color:#1d8ce0}.demo-block .demo-block-control .text-slide-enter,.demo-block .demo-block-control .text-slide-leave-active{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}", "", {"version":3,"sources":["/Users/luxiaopeng/docsify-demo-box-react/src/assets/demoBlock.scss"],"names":[],"mappings":"AAAA,YACE,yBAAyB,AACzB,kBAAkB,AAClB,uBAAe,AAAf,cAAe,CAmJhB,AAtJD,kBAMI,mFAAkF,AAAlF,0EAAkF,CACnF,AAPH,iBAUI,mDAAwD,CACzD,AAXH,yBAcI,WAAY,CACb,AAfH,oBAkBI,YAAa,CACd,AAnBH,kBAsBI,yBAAyB,AACzB,6BAA6B,AAC7B,WAAW,AACX,gBAAgB,AAChB,SAAS,AACT,8BAAsB,AAAtB,qBAAsB,CACvB,AA5BH,yBA+BI,kBAAkB,AAClB,UAAU,AACV,8BAAsB,AAAtB,sBAAsB,AACtB,8BAA8B,AAC9B,YAAY,AACZ,eAAe,AACf,gBAAgB,AAChB,cAAc,AACd,qBAAsB,CAqCvB,AA5EH,2BA0CM,gBAAgB,AAChB,eAAgB,CACjB,AA5CL,8BA+CM,cAAc,AACd,yBAAyB,AACzB,aAAa,AACb,qBAAqB,AACrB,gBAAgB,AAChB,eAAe,AACf,kBAAkB,AAClB,YAAY,AACZ,gBAAiB,CAClB,AAxDL,gCA2DM,YAAY,AACZ,iBAAiB,AACjB,kBAAkB,AAClB,mBAAmB,AACnB,YAAY,AACZ,aAAa,AACb,kBAAkB,AAClB,WAAY,AACZ,cAAc,AACd,eAAe,AACf,kBAAkB,AAClB,kBAAmB,CAKpB,AA3EL,sCAyEQ,kBAAmB,CACpB,AA1EP,uBA+EI,UAAU,AACV,8BAA+B,CAmBhC,AAnGH,2BAmFM,QAAS,CACV,AApFL,iCAuFM,SAAS,AACT,YAAY,AACZ,gBAAgB,AAChB,eAAgB,CAKjB,AA/FL,wCA6FQ,YAAa,CACd,AA9FP,iCAiGM,gBAAiB,CAClB,AAlGL,gCAsGI,6BAA6B,AAC7B,YAAY,AACZ,8BAAsB,AAAtB,sBAAsB,AACtB,sBAAsB,AACtB,8BAA8B,AAC9B,+BAA+B,AAC/B,kBAAkB,AAClB,gBAAgB,AAChB,cAAc,AACd,eAAe,AACf,uBAAe,AAAf,eAAe,AACf,iBAAkB,CAoCnB,AArJH,yCAoHM,eAAe,AACf,SAAS,AACT,WAAY,CACb,AAvHL,kCA0HM,eAAe,AACf,iBAAiB,AACjB,uBAAe,AAAf,cAAe,CAIhB,AAhIL,2CA8HQ,oCAA4B,AAA5B,2BAA4B,CAC7B,AA/HP,qCAmIM,kBAAkB,AAClB,oCAA4B,AAA5B,4BAA4B,AAC5B,eAAe,AACf,iBAAiB,AACjB,uBAAe,AAAf,eAAe,AACf,qBAAqB,AACrB,aAAc,CAKf,AA9IL,2CA4IQ,aAAc,CACf,AA7IP,2GAkJM,UAAU,AACV,mCAA2B,AAA3B,0BAA2B,CAC5B","file":"demoBlock.scss","sourcesContent":[".demo-block {\n  border: solid 1px #eaeefb;\n  border-radius: 4px;\n  transition: .2s;\n\n  &.hover {\n    box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);\n  }\n\n  code {\n    font-family: Menlo, Monaco, Consolas, Courier, monospace;\n  }\n\n  .demo-button {\n    float: right;\n  }\n\n  .source {\n    padding: 24px;\n  }\n\n  .meta {\n    background-color: #f9fafc;\n    border-top: solid 1px #eaeefb;\n    clear: both;\n    overflow: hidden;\n    height: 0;\n    transition: height .2s;\n  }\n\n  .description {\n    padding: 18px 24px;\n    width: 40%;\n    box-sizing: border-box;\n    border-left: solid 1px #eaeefb;\n    float: right;\n    font-size: 14px;\n    line-height: 1.8;\n    color: #5e6d82;\n    word-break: break-word;\n\n    p {\n      margin: 0 0 12px;\n      line-height: 1.8;\n    }\n\n    code {\n      color: #5e6d82;\n      background-color: #e6effb;\n      margin: 0 4px;\n      display: inline-block;\n      padding: 1px 5px;\n      font-size: 12px;\n      border-radius: 3px;\n      height: 18px;\n      line-height: 18px;\n    }\n\n    button {\n      height: 36px;\n      line-height: 36px;\n      text-align: center;\n      background: #20a0ff;\n      border: none;\n      outline: none;\n      border-radius: 5px;\n      color: white;\n      display: block;\n      font-size: 14px;\n      padding-left: 10px;\n      padding-right: 10px;\n\n      &:hover {\n        background: #4db3ff;\n      }\n    }\n  }\n\n  .highlight {\n    width: 60%;\n    border-right: solid 1px #eaeefb;\n\n    pre {\n      margin: 0;\n    }\n\n    code.hljs {\n      margin: 0;\n      border: none;\n      max-height: none;\n      border-radius: 0;\n\n      &::before {\n        content: none;\n      }\n    }\n    .lang-css {\n      padding-bottom: 0;\n    }\n  }\n\n  .demo-block-control {\n    border-top: solid 1px #eaeefb;\n    height: 36px;\n    box-sizing: border-box;\n    background-color: #fff;\n    border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px;\n    text-align: center;\n    margin-top: -1px;\n    color: #d3dce6;\n    cursor: pointer;\n    transition: .2s;\n    position: relative;\n\n    &.is-fixed {\n      position: fixed;\n      bottom: 0;\n      width: 868px;\n    }\n\n    i {\n      font-size: 12px;\n      line-height: 36px;\n      transition: .3s;\n      &.hovering {\n        transform: translateX(-40px);\n      }\n    }\n\n    span {\n      position: absolute;\n      transform: translateX(-30px);\n      font-size: 14px;\n      line-height: 36px;\n      transition: .3s;\n      display: inline-block;\n      color: #58B7FF;\n\n      &:hover {\n        color: #1D8CE0;\n      }\n    }\n\n    & .text-slide-enter,\n    & .text-slide-leave-active {\n      opacity: 0;\n      transform: translateX(10px);\n    }\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, ".demo-block{border:1px solid #eaeefb;border-radius:4px;-webkit-transition:.2s;transition:.2s}.demo-block.hover{-webkit-box-shadow:0 0 8px 0 rgba(232,237,250,.6),0 2px 4px 0 rgba(232,237,250,.5);box-shadow:0 0 8px 0 rgba(232,237,250,.6),0 2px 4px 0 rgba(232,237,250,.5)}.demo-block code{font-family:Menlo,Monaco,Consolas,Courier,monospace}.demo-block .demo-button{float:right}.demo-block .source{padding:24px}.demo-block .meta{background-color:#f9fafc;border-top:1px solid #eaeefb;clear:both;overflow:hidden;height:0;-webkit-transition:height .2s;transition:height .2s}.demo-block .description{padding:18px 24px;width:40%;-webkit-box-sizing:border-box;box-sizing:border-box;border-left:1px solid #eaeefb;float:right;font-size:14px;line-height:1.8;color:#5e6d82;word-break:break-word}.demo-block .description p{margin:0 0 12px;line-height:1.8}.demo-block .description code{color:#5e6d82;background-color:#e6effb;margin:0 4px;display:inline-block;padding:1px 5px;font-size:12px;border-radius:3px;height:18px;line-height:18px}.demo-block .description button{height:36px;line-height:36px;text-align:center;background:#20a0ff;border:none;outline:none;border-radius:5px;color:#fff;display:block;font-size:14px;padding-left:10px;padding-right:10px}.demo-block .description button:hover{background:#4db3ff}.demo-block .highlight{width:60%;border-right:1px solid #eaeefb}.demo-block .highlight pre{margin:0}.demo-block .highlight code.hljs{margin:0;border:none;max-height:none;border-radius:0}.demo-block .highlight code.hljs:before{content:none}.demo-block .highlight .lang-css{padding-bottom:0}.demo-block .demo-block-control{border-top:1px solid #eaeefb;height:36px;-webkit-box-sizing:border-box;box-sizing:border-box;background-color:#fff;border-bottom-left-radius:4px;border-bottom-right-radius:4px;text-align:center;margin-top:-1px;color:#d3dce6;cursor:pointer;-webkit-transition:.2s;transition:.2s;position:relative}.demo-block .demo-block-control.is-fixed{position:fixed;bottom:0;width:868px}.demo-block .demo-block-control i{font-size:12px;line-height:36px;-webkit-transition:.3s;transition:.3s}.demo-block .demo-block-control i.hovering{-webkit-transform:translateX(-40px);transform:translateX(-40px)}.demo-block .demo-block-control span{position:absolute;-webkit-transform:translateX(-30px);transform:translateX(-30px);font-size:14px;line-height:36px;-webkit-transition:.3s;transition:.3s;display:inline-block;color:#58b7ff}.demo-block .demo-block-control span:hover{color:#1d8ce0}.demo-block .demo-block-control .text-slide-enter,.demo-block .demo-block-control .text-slide-leave-active{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}", "", {"version":3,"sources":["/Users/leon/Documents/git/docsify-demo-box-react/src/assets/demoBlock.scss"],"names":[],"mappings":"AAAA,YACE,yBAAyB,AACzB,kBAAkB,AAClB,uBAAe,AAAf,cAAe,CAmJhB,AAtJD,kBAMI,mFAAkF,AAAlF,0EAAkF,CACnF,AAPH,iBAUI,mDAAwD,CACzD,AAXH,yBAcI,WAAY,CACb,AAfH,oBAkBI,YAAa,CACd,AAnBH,kBAsBI,yBAAyB,AACzB,6BAA6B,AAC7B,WAAW,AACX,gBAAgB,AAChB,SAAS,AACT,8BAAsB,AAAtB,qBAAsB,CACvB,AA5BH,yBA+BI,kBAAkB,AAClB,UAAU,AACV,8BAAsB,AAAtB,sBAAsB,AACtB,8BAA8B,AAC9B,YAAY,AACZ,eAAe,AACf,gBAAgB,AAChB,cAAc,AACd,qBAAsB,CAqCvB,AA5EH,2BA0CM,gBAAgB,AAChB,eAAgB,CACjB,AA5CL,8BA+CM,cAAc,AACd,yBAAyB,AACzB,aAAa,AACb,qBAAqB,AACrB,gBAAgB,AAChB,eAAe,AACf,kBAAkB,AAClB,YAAY,AACZ,gBAAiB,CAClB,AAxDL,gCA2DM,YAAY,AACZ,iBAAiB,AACjB,kBAAkB,AAClB,mBAAmB,AACnB,YAAY,AACZ,aAAa,AACb,kBAAkB,AAClB,WAAY,AACZ,cAAc,AACd,eAAe,AACf,kBAAkB,AAClB,kBAAmB,CAKpB,AA3EL,sCAyEQ,kBAAmB,CACpB,AA1EP,uBA+EI,UAAU,AACV,8BAA+B,CAmBhC,AAnGH,2BAmFM,QAAS,CACV,AApFL,iCAuFM,SAAS,AACT,YAAY,AACZ,gBAAgB,AAChB,eAAgB,CAKjB,AA/FL,wCA6FQ,YAAa,CACd,AA9FP,iCAiGM,gBAAiB,CAClB,AAlGL,gCAsGI,6BAA6B,AAC7B,YAAY,AACZ,8BAAsB,AAAtB,sBAAsB,AACtB,sBAAsB,AACtB,8BAA8B,AAC9B,+BAA+B,AAC/B,kBAAkB,AAClB,gBAAgB,AAChB,cAAc,AACd,eAAe,AACf,uBAAe,AAAf,eAAe,AACf,iBAAkB,CAoCnB,AArJH,yCAoHM,eAAe,AACf,SAAS,AACT,WAAY,CACb,AAvHL,kCA0HM,eAAe,AACf,iBAAiB,AACjB,uBAAe,AAAf,cAAe,CAIhB,AAhIL,2CA8HQ,oCAA4B,AAA5B,2BAA4B,CAC7B,AA/HP,qCAmIM,kBAAkB,AAClB,oCAA4B,AAA5B,4BAA4B,AAC5B,eAAe,AACf,iBAAiB,AACjB,uBAAe,AAAf,eAAe,AACf,qBAAqB,AACrB,aAAc,CAKf,AA9IL,2CA4IQ,aAAc,CACf,AA7IP,2GAkJM,UAAU,AACV,mCAA2B,AAA3B,0BAA2B,CAC5B","file":"demoBlock.scss","sourcesContent":[".demo-block {\n  border: solid 1px #eaeefb;\n  border-radius: 4px;\n  transition: .2s;\n\n  &.hover {\n    box-shadow: 0 0 8px 0 rgba(232, 237, 250, .6), 0 2px 4px 0 rgba(232, 237, 250, .5);\n  }\n\n  code {\n    font-family: Menlo, Monaco, Consolas, Courier, monospace;\n  }\n\n  .demo-button {\n    float: right;\n  }\n\n  .source {\n    padding: 24px;\n  }\n\n  .meta {\n    background-color: #f9fafc;\n    border-top: solid 1px #eaeefb;\n    clear: both;\n    overflow: hidden;\n    height: 0;\n    transition: height .2s;\n  }\n\n  .description {\n    padding: 18px 24px;\n    width: 40%;\n    box-sizing: border-box;\n    border-left: solid 1px #eaeefb;\n    float: right;\n    font-size: 14px;\n    line-height: 1.8;\n    color: #5e6d82;\n    word-break: break-word;\n\n    p {\n      margin: 0 0 12px;\n      line-height: 1.8;\n    }\n\n    code {\n      color: #5e6d82;\n      background-color: #e6effb;\n      margin: 0 4px;\n      display: inline-block;\n      padding: 1px 5px;\n      font-size: 12px;\n      border-radius: 3px;\n      height: 18px;\n      line-height: 18px;\n    }\n\n    button {\n      height: 36px;\n      line-height: 36px;\n      text-align: center;\n      background: #20a0ff;\n      border: none;\n      outline: none;\n      border-radius: 5px;\n      color: white;\n      display: block;\n      font-size: 14px;\n      padding-left: 10px;\n      padding-right: 10px;\n\n      &:hover {\n        background: #4db3ff;\n      }\n    }\n  }\n\n  .highlight {\n    width: 60%;\n    border-right: solid 1px #eaeefb;\n\n    pre {\n      margin: 0;\n    }\n\n    code.hljs {\n      margin: 0;\n      border: none;\n      max-height: none;\n      border-radius: 0;\n\n      &::before {\n        content: none;\n      }\n    }\n    .lang-css {\n      padding-bottom: 0;\n    }\n  }\n\n  .demo-block-control {\n    border-top: solid 1px #eaeefb;\n    height: 36px;\n    box-sizing: border-box;\n    background-color: #fff;\n    border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px;\n    text-align: center;\n    margin-top: -1px;\n    color: #d3dce6;\n    cursor: pointer;\n    transition: .2s;\n    position: relative;\n\n    &.is-fixed {\n      position: fixed;\n      bottom: 0;\n      width: 868px;\n    }\n\n    i {\n      font-size: 12px;\n      line-height: 36px;\n      transition: .3s;\n      &.hovering {\n        transform: translateX(-40px);\n      }\n    }\n\n    span {\n      position: absolute;\n      transform: translateX(-30px);\n      font-size: 14px;\n      line-height: 36px;\n      transition: .3s;\n      display: inline-block;\n      color: #58B7FF;\n\n      &:hover {\n        color: #1D8CE0;\n      }\n    }\n\n    & .text-slide-enter,\n    & .text-slide-leave-active {\n      opacity: 0;\n      transform: translateX(10px);\n    }\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -10413,9 +10413,9 @@ if (false) {
 
 
 
+var emptyFunction = __webpack_require__(6);
+var invariant = __webpack_require__(0);
 var ReactPropTypesSecret = __webpack_require__(47);
-
-function emptyFunction() {}
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -10423,13 +10423,12 @@ module.exports = function() {
       // It is still safe when called from React.
       return;
     }
-    var err = new Error(
+    invariant(
+      false,
       'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
       'Use PropTypes.checkPropTypes() to call them. ' +
       'Read more at http://fb.me/use-check-prop-types'
     );
-    err.name = 'Invariant Violation';
-    throw err;
   };
   shim.isRequired = shim;
   function getShim() {
@@ -11202,7 +11201,7 @@ Prism.languages.javascript = Prism.languages.extend('clike', {
 
 Prism.languages.insertBefore('javascript', 'keyword', {
 	'regex': {
-		pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})\]]))/,
+		pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
 		lookbehind: true,
 		greedy: true
 	},
@@ -11216,24 +11215,23 @@ Prism.languages.insertBefore('javascript', 'keyword', {
 
 Prism.languages.insertBefore('javascript', 'string', {
 	'template-string': {
-		pattern: /`(?:\\[\s\S]|\${[^}]+}|[^\\`])*`/,
+		pattern: /`(?:\\[\s\S]|[^\\`])*`/,
 		greedy: true,
 		inside: {
 			'interpolation': {
-				pattern: /\${[^}]+}/,
+				pattern: /\$\{[^}]+\}/,
 				inside: {
 					'interpolation-punctuation': {
-						pattern: /^\${|}$/,
+						pattern: /^\$\{|\}$/,
 						alias: 'punctuation'
 					},
-					rest: null // See below
+					rest: Prism.languages.javascript
 				}
 			},
 			'string': /[\s\S]+/
 		}
 	}
 });
-Prism.languages.javascript['template-string'].inside['interpolation'].inside.rest = Prism.languages.javascript;
 
 if (Prism.languages.markup) {
 	Prism.languages.insertBefore('markup', 'tag', {
@@ -11277,7 +11275,7 @@ Prism.languages.js = Prism.languages.javascript;
 			var src = pre.getAttribute('data-src');
 
 			var language, parent = pre;
-			var lang = /\blang(?:uage)?-([\w-]+)\b/i;
+			var lang = /\blang(?:uage)?-(?!\*)([\w-]+)\b/i;
 			while (parent && !lang.test(parent.className)) {
 				parent = parent.parentNode;
 			}
@@ -11321,29 +11319,25 @@ Prism.languages.js = Prism.languages.javascript;
 				}
 			};
 
+			if (pre.hasAttribute('data-download-link') && Prism.plugins.toolbar) {
+				Prism.plugins.toolbar.registerButton('download-file', function () {
+					var a = document.createElement('a');
+					a.textContent = pre.getAttribute('data-download-link-label') || 'Download';
+					a.setAttribute('download', '');
+					a.href = src;
+					return a;
+				});
+			}
+
 			xhr.send(null);
 		});
-
-		if (Prism.plugins.toolbar) {
-			Prism.plugins.toolbar.registerButton('download-file', function (env) {
-				var pre = env.element.parentNode;
-				if (!pre || !/pre/i.test(pre.nodeName) || !pre.hasAttribute('data-src') || !pre.hasAttribute('data-download-link')) {
-					return;
-				}
-				var src = pre.getAttribute('data-src');
-				var a = document.createElement('a');
-				a.textContent = pre.getAttribute('data-download-link-label') || 'Download';
-				a.setAttribute('download', '');
-				a.href = src;
-				return a;
-			});
-		}
 
 	};
 
 	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
 
 })();
+
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
 
 /***/ }),
@@ -11355,9 +11349,8 @@ Prism.languages.js = Prism.languages.javascript;
 var javascript = Prism.util.clone(Prism.languages.javascript);
 
 Prism.languages.jsx = Prism.languages.extend('markup', javascript);
-Prism.languages.jsx.tag.pattern= /<\/?(?:[\w.:-]+\s*(?:\s+(?:[\w.:-]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s{'">=]+|\{(?:\{(?:\{[^}]*\}|[^{}])*\}|[^{}])+\}))?|\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}))*\s*\/?)?>/i;
+Prism.languages.jsx.tag.pattern= /<\/?[\w.:-]+\s*(?:\s+(?:[\w.:-]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s{'">=]+|\{(?:\{[^}]*\}|[^{}])+\}))?|\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}))*\s*\/?>/i;
 
-Prism.languages.jsx.tag.inside['tag'].pattern = /^<\/?[^\s>\/]*/i;
 Prism.languages.jsx.tag.inside['attr-value'].pattern = /=(?!\{)(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">]+)/i;
 
 Prism.languages.insertBefore('inside', 'attr-name', {
@@ -11372,8 +11365,8 @@ Prism.languages.insertBefore('inside', 'attr-name', {
 
 Prism.languages.insertBefore('inside', 'attr-value',{
 	'script': {
-		// Allow for two levels of nesting
-		pattern: /=(\{(?:\{(?:\{[^}]*\}|[^}])*\}|[^}])+\})/i,
+		// Allow for one level of nesting
+		pattern: /=(\{(?:\{[^}]*\}|[^}])+\})/i,
 		inside: {
 			'script-punctuation': {
 				pattern: /^=(?={)/,
@@ -11387,9 +11380,6 @@ Prism.languages.insertBefore('inside', 'attr-value',{
 
 // The following will handle plain text inside tags
 var stringifyToken = function (token) {
-	if (!token) {
-		return '';
-	}
 	if (typeof token === 'string') {
 		return token;
 	}
@@ -14651,7 +14641,7 @@ var DOMLazyTree = __webpack_require__(14);
 var ExecutionEnvironment = __webpack_require__(5);
 
 var createNodesFromMarkup = __webpack_require__(111);
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var invariant = __webpack_require__(0);
 
 var Danger = {
@@ -15065,11 +15055,11 @@ var ReactDOMInput = __webpack_require__(127);
 var ReactDOMOption = __webpack_require__(143);
 var ReactDOMSelect = __webpack_require__(67);
 var ReactDOMTextarea = __webpack_require__(144);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var ReactMultiChild = __webpack_require__(145);
 var ReactServerRenderingTransaction = __webpack_require__(152);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var escapeTextContentForBrowser = __webpack_require__(25);
 var invariant = __webpack_require__(0);
 var isEventSupported = __webpack_require__(32);
@@ -16091,7 +16081,7 @@ module.exports = AutoFocusUtils;
 
 var CSSProperty = __webpack_require__(60);
 var ExecutionEnvironment = __webpack_require__(5);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 
 var camelizeStyleName = __webpack_require__(118);
 var dangerousStyleValue = __webpack_require__(120);
@@ -17055,31 +17045,13 @@ module.exports = ReactPropTypesSecret;
 
 
 
+var emptyFunction = __webpack_require__(6);
+var invariant = __webpack_require__(0);
+var warning = __webpack_require__(2);
 var assign = __webpack_require__(3);
 
 var ReactPropTypesSecret = __webpack_require__(47);
 var checkPropTypes = __webpack_require__(130);
-
-var printWarning = function() {};
-
-if (false) {
-  printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-}
-
-function emptyFunctionThatReturnsNull() {
-  return null;
-}
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -17223,13 +17195,12 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       if (secret !== ReactPropTypesSecret) {
         if (throwOnDirectAccess) {
           // New behavior only for users of `prop-types` package
-          var err = new Error(
+          invariant(
+            false,
             'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
             'Use `PropTypes.checkPropTypes()` to call them. ' +
             'Read more at http://fb.me/use-check-prop-types'
           );
-          err.name = 'Invariant Violation';
-          throw err;
         } else if (false) {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
@@ -17238,12 +17209,15 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             // Avoid spamming the console because they are often not actionable except for lib authors
             manualPropTypeWarningCount < 3
           ) {
-            printWarning(
+            warning(
+              false,
               'You are manually calling a React.PropTypes validation ' +
-              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'function for the `%s` prop on `%s`. This is deprecated ' +
               'and will throw in the standalone `prop-types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +
-              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
+              propFullName,
+              componentName
             );
             manualPropTypeCallCache[cacheKey] = true;
             manualPropTypeWarningCount++;
@@ -17287,7 +17261,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   }
 
   function createAnyTypeChecker() {
-    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
   }
 
   function createArrayOfTypeChecker(typeChecker) {
@@ -17337,8 +17311,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-       false ? printWarning('Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
-      return emptyFunctionThatReturnsNull;
+       false ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      return emptyFunction.thatReturnsNull;
     }
 
     function validate(props, propName, componentName, location, propFullName) {
@@ -17380,18 +17354,21 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-       false ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-      return emptyFunctionThatReturnsNull;
+       false ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunction.thatReturnsNull;
     }
 
     for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
       if (typeof checker !== 'function') {
-        printWarning(
+        warning(
+          false,
           'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
-          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
         );
-        return emptyFunctionThatReturnsNull;
+        return emptyFunction.thatReturnsNull;
       }
     }
 
@@ -17617,24 +17594,11 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 
-var printWarning = function() {};
-
 if (false) {
+  var invariant = require('fbjs/lib/invariant');
+  var warning = require('fbjs/lib/warning');
   var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
   var loggedTypeFailures = {};
-
-  printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
 }
 
 /**
@@ -17659,29 +17623,12 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
         try {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          if (typeof typeSpecs[typeSpecName] !== 'function') {
-            var err = Error(
-              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
-            );
-            err.name = 'Invariant Violation';
-            throw err;
-          }
+          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);
           error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
         }
-        if (error && !(error instanceof Error)) {
-          printWarning(
-            (componentName || 'React class') + ': type specification of ' +
-            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
-            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
-            'You may have forgotten to pass an argument to the type checker ' +
-            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
-            'shape all require an argument).'
-          )
-
-        }
+        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
         if (error instanceof Error && !(error.message in loggedTypeFailures)) {
           // Only monitor this failure once because there tends to be a lot of the
           // same error.
@@ -17689,9 +17636,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
           var stack = getStack ? getStack() : '';
 
-          printWarning(
-            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
-          );
+          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
         }
       }
     }
@@ -17787,7 +17732,7 @@ module.exports = lowPriorityWarning;
 var PooledClass = __webpack_require__(133);
 var ReactElement = __webpack_require__(15);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var traverseAllChildren = __webpack_require__(134);
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -19881,13 +19826,13 @@ var _prodInvariant = __webpack_require__(1);
 
 var ReactComponentEnvironment = __webpack_require__(38);
 var ReactInstanceMap = __webpack_require__(21);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactReconciler = __webpack_require__(13);
 var ReactChildReconciler = __webpack_require__(146);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var flattenChildren = __webpack_require__(151);
 var invariant = __webpack_require__(0);
 
@@ -20491,7 +20436,7 @@ var ReactComponentEnvironment = __webpack_require__(38);
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactErrorUtils = __webpack_require__(30);
 var ReactInstanceMap = __webpack_require__(21);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var ReactNodeTypes = __webpack_require__(70);
 var ReactReconciler = __webpack_require__(13);
 
@@ -21561,7 +21506,7 @@ var _assign = __webpack_require__(3);
 
 var PooledClass = __webpack_require__(11);
 var Transaction = __webpack_require__(22);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var ReactServerUpdateQueue = __webpack_require__(153);
 
 /**
@@ -22164,7 +22109,7 @@ var _assign = __webpack_require__(3);
 var ReactUpdates = __webpack_require__(8);
 var Transaction = __webpack_require__(22);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 
 var RESET_BATCHED_UPDATES = {
   initialize: emptyFunction,
@@ -22473,7 +22418,7 @@ var CallbackQueue = __webpack_require__(53);
 var PooledClass = __webpack_require__(11);
 var ReactBrowserEventEmitter = __webpack_require__(26);
 var ReactInputSelection = __webpack_require__(76);
-var ReactInstrumentation = __webpack_require__(6);
+var ReactInstrumentation = __webpack_require__(7);
 var Transaction = __webpack_require__(22);
 var ReactUpdateQueue = __webpack_require__(42);
 
@@ -23553,7 +23498,7 @@ var SyntheticTransitionEvent = __webpack_require__(177);
 var SyntheticUIEvent = __webpack_require__(18);
 var SyntheticWheelEvent = __webpack_require__(178);
 
-var emptyFunction = __webpack_require__(7);
+var emptyFunction = __webpack_require__(6);
 var getEventCharCode = __webpack_require__(44);
 var invariant = __webpack_require__(0);
 
