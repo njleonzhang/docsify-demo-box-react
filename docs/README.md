@@ -48,6 +48,11 @@ Hello `world`
 * a
 * b
 </desc>
+<style>
+  .author {
+    color: #ff0000cc;
+  }
+</style>
 <script>
   export default class Application extends React.Component {
     constructor(props) {
@@ -62,7 +67,7 @@ Hello `world`
         <div>
           <div className='wrapper' ref={el => this.el = el}>
             <div>
-            <p>author: {this.globalVariable}</p>
+            <p class='author'>author: {this.globalVariable}</p>
             <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
             </div>
           </div>
@@ -81,6 +86,11 @@ Hello `world`
 * a
 * b
 </desc>
+<style>
+  .author {
+    color: #ff0000cc;
+  }
+</style>
 <script>
   export default class Application extends React.Component {
     constructor(props) {
@@ -94,17 +104,15 @@ Hello `world`
       return (
         <div>
           <div className='wrapper' ref={el => this.el = el}>
-            <label className="test-label">
-                <input />
-                <p className="test">author: {this.globalVariable}</p>
-                <button style={{color: this.state.color}} className='test-button' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
-            </label>
+            <div>
+            <p className='author'>author: {this.globalVariable}</p>
+            <button style={{color: this.state.color}} className='test' onClick={e => {alert('author: ' + this.globalVariable); this.setState({color: 'red'})}}>test</button>
+            </div>
           </div>
         </div>
       )
     }
   }
-</script>
 ```
 
 The sample code is rendered on the page instantly, so the people who read your document can see the preview immediately.
