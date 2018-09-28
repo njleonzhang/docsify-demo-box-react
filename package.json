@@ -1,6 +1,6 @@
 {
   "name": "docsify-demo-box-react",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "write React jsx demo in docsify with instant preview and jsfiddle integration",
   "author": "njleonzhang <scream3616@sina.com>",
   "scripts": {
